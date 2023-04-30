@@ -1,0 +1,171 @@
+bash scriptiong -> 
+----------------------
+https://www.youtube.com/watch?v=boqC9QenshY&list=PLT98CRl2KxKGj-VKtApD8-zCqSaN2mD4w&index=2
+
+1.which bash we are using the command is 
+    echo $SHELL  -> /bin/bash
+2. which bash 
+   /usr/bin/bash
+3. if we are not using and we need to identify where the bash interpeter and we need to run it
+    
+4. ls -> list storage
+5. ls -l -> list storage long listing
+6. nano is the editers to create a file  and control + O is used to save the file to bash
+7. to make executable to the file we need to run chmod +x script name
+#!/bin/bash -> it's caled as  she bang or hash bang
+in Nano editer to delete the line and we need to use control+k to delete the row.
+fg is command to goback to scrpt if we press some key unknow
+
+file exist or not example
+if [ -f ~/myfile ]
+sudo apt update && sudo apt install -y htop
+if command -v $command
+sudo apt install/remove htop
+release_os_file = /etc/os-relase
+if grep -q "Arch"  $release
+
+for n in {1..10} or for n in 1,2,3,4,5,6,7,8,9,10 
+do
+  echo $n
+done
+
+for file in logfiles/*.logfiles
+do 
+  tar -cvzf $file.tar.gz $file
+done
+
+sudo chown root:root /user/local/bin/update
+export PATH =/user/local/bin:$PATH
+1.standard o/p -> command result display in terminal is standard o/p, i.e $?=0
+2.standard error -> command failed messages are standarfd errors i.e $?=2
+3.standard i/p -> read variable name -> it holds the input enters by user 
+find /etc -type f 2> /dev/null  -> it will find all the files in /etc directory and all standard errors/files not have permissions(exit code($?)2) routed to /dev/null
+fidn /etc -type f > /dev/null -> it will display all errors in terminal and > /dev/null is taking the defauly as standard o/p and redirect to /dev/null
+find /etc -type f &> file.txt -> it will redirect all standard o/p and standard error to a file.txt
+
+sudo su -  -> to switch to a root 
+
+function:  check_id_fun() { -> opening a function name check_id_fun
+if ( $? -eq = 0)
+ echo "my condition is true"
+fi
+} -> closing of function
+
+while [ $variable -eq 1 ]
+do
+echo "my script"
+ variable  = 1
+
+done
+
+job schedulng
+-------------------
+1.at 03:45 -f ./myscript.sh
+2.atq -> at queue -> it will give us the jobs in queue
+3.atrm 3(job id) -> it will cancle the job to run 
+4.at 03:45 092523 -f ./myscript.sh -> this script will run at 25-sept-23 at 03:45 pm est
+which echo -> it will display where tge echo file was present and usually it will be /usr/bin/echo
+
+crontab -e -> format is m(minutes) h(hour) dom(day of month) mon(Month) dow(day of week(0,7 is for Sunday) command
+
+30 1 * * * 5 /user/local/bin/script.sh  -> this script run every friday at 01:30 am est
+
+30 1 17 8 5 /usr/bin/script -> this script will run on aug-17 at 01:30 am and if that dy is friday then only
+
+sudo crontab -u  user1 user2 -e
+to mathematical abbrevations: expr = $var +1 or $(($var -1))
+lines = $(ls -lh  $1| wc-l) 
+echo "total Number of Lines:"  $(($lines-1)) =  
+if [ $# -ne 1 ]  -> $# means how many arguments the user enters
+
+less/more -> it eill display the file by page by page and we need to use the space to view next page
+ls -l -> long listvwith orde rby alphabet order
+ls - l -t -> list the files with the order by timestamp
+ls -l -t -r -> reverse the files with the decening order of tampstamp
+who
+whoami
+user
+was
+which
+cp -r dir1 dir2
+file comand it will say it's file,directory,special char or binary file etc..
+
+find / -name <file name>  -> it will give the location of the files
+find / -user <user id>  -> it will give all the files of that user
+find /-group <groip name> -> it will give all the files of that group
+grep -> glocal regular expression print
+grep <pattten> file name
+grep -i -> supress(ignore) the case sesitive while searching 
+ls -l | grep environment _. used to find directories/files in grep we can use ls -l with | symbol
+ls -l |grep ^d (it will display only directories as it will selett the files starts with symbol d)(it represents the first char)
+sed -> stream editor -> it is used to search a word in a file and replace with the new word
+examples:
+sed 's/old_txt/new_txt/'  file name -> it will override the old_txt with new_txt and display but it won't update in file
+sed 's/old_txt/new_txt/g'  file name -> it will override the old_txt with new_txt if the old_txt is not whole word(i.e if old_txt is part of word old_txter')and display but it won't update in file.
+sed -i 's/old_txt/new_txt/g' file name  -> it will override the old_txt with new_txt and display but it will overrite the file
+sed -i 's/old_txt/new_txt/ig' file name  -> it will override the old_txt with new_txt and display but it will overrite the file(ig is for case sensitive)
+sed -n '5,10p'  file name ->  it will copy only from 5 t0 10p lines
+sed '10,20p' file name ->  it will remove the lines from 10 to 20p in a file and display 
+id user -> it will give information about the user
+uptime -> it will show the server up tyme and how many users logged in the server
+/etc/passwd -> here we can contain all the users
+/home/username
+
+user id creation
+syntax:
+   useradd <option> <user name>
+
+options: -u user id       
+         -G secondary group id
+         -g primary group id
+         -d home directory
+         -c comment
+         -s shell
+if users gets created and it will be stored in /home/
+id john: result is john:x:1001 -> x means no password set for the user id john and 1001 is the user id of user john
+if we create a user id and by default one user group also create /etc/group
+usermod _. is the command to chnage the attributes of the user i.e exp: usermod -G JOHN MARK -> i am adding ghe MARK to the JOHN grpup
+nano /etc/ssh/sshd/_config  if we update any parameter and we need to reload the service sshd: service sshd reload
+ls -l
+
+-rw-r--r  1 root(root user/user) root(user belongs to which group) 8 may 7 20:29   file1 
+
+file naming convention:  
+------------------------  
+-(rw-){r--}[r--](1.first byte is file type)(2.permission of owner of the file[rwx {read/write/execution}])(3.Primary group permission for the users in that group)(4.others permission)
+|1|      |    |
+  |      |    |
+  |2     |3   |4
+file types are:
+-----------------
+- -> normal file 
+b -> block file(hard disk/floppy disk)
+c -> charater file(keyboard/mouse)
+d -> directory 
+l -> link files(short cut)  
+
+chmod is used to chnage the permisson of the file/directory
+1.symbolic method (ugo)[ u-> user/owner g-> primary group o-> others)
+2.absolute methos (numbers)
+syntx: for method 1: chmod [who] {+\-\=} {permissions} 	file1 
+chmod u+x,g-w,o=w file1 -> 
+user/root will be getting gthe execution permission,group is getting removed the write perssion, o=w(= means it will delete all existing permissions and over write with new ones)
+
+ absolute methid:
+ read -> 4
+ write -> 2
+ execute-> 1
+ chmod 767 <file name> ->  i.e -rwxrw-rwx
+        7(read(4)+write(2)+execution(1) i.e rwx)
+		6(read(4)+write(2) i.e rw)
+ 
+chmod 777 <file name> (rwx(4+2+1))(rwx(4+2+1))(rwx(4+2+1))
+ 
+chmod 000 -> no permissions i.e -(---)[---}(---)
+
+ls -ld -> list the long directory.
+chown john:john file1 (Only root user can change the ownership of the file(owner:group)
+
+
+https://www.facebook.com/watch/?ref=search&v=1333348484182604&external_log_id=109569be-632c-4180-a0d3-773e39977e7d&q=bashscript
+http://www.sampleqa.in/bash/Shell-Scripting-Basics.html

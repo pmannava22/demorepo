@@ -1,0 +1,265 @@
+
+
+https://www.linkedin.com/in/purnachandrarao-mannava-509096253
+
+github password: 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 : main github pwd:HelloHello@01
+
+sudo apt update -y
+sdlc 
+
+-----------------------------------------
+    unix commands:
+--------------------------------------------A
+
+IF FIRST CHARACTER IS $ THEN IT'S BASH COMMAND AND IF FIRST CHAR IS # THEN WE NEED TO UNDERSATND IT'S ROOT USER. 
+IF FIRST CHARGE IF KSH -. KORNE SHELL COMMAND
+command line editing options -> alt for words and ctrl for characters
+
+TO SEARCH A TEXT USE "/" AND THEN TYPE "N" TO GO TO NEXT OCCURENCE
+TO SEARCH A TEXT USE "?" AND THEN TYPE "N" TO GO TO PREVIOUS OCCURENCE
+
+CAT WITH SPACEBAR KEY/ENTER TO GO TO NEXT LINE AND CTRL-B TO COME BACK AND CTRL-Q TO QUIT THE FILE 
+
+  MOVEMENT COMMANDS
+======================
+ctrl-f or right arrow - > to moved one character forward
+ctrl-b or left arrow  -> to move backward a character
+ctrl-a or home -> move to begining of line
+ctrl-e or end -> move to end of the line
+ALT-F -> MOVE FORWARD A WORD
+ALT-B -> MOVE BACKWORD A WORD
+CTRL-L ->  CLEAR SCREEN AND PLACE THE CURSOR AT TOP
+
+
+  EDITING COMMANDS:
+===========================
+CTRL-D OR DEL -> TO DELETE A CHARACTER THE CURSOR ON
+CTRL-H OR BACKSPACE -> TO delete a character before the cursor
+ctrl-k -> cut remainder of line from cursor position
+ctrl-u -> cut from cursor position to begining of file
+ctrl-w -> cut previous word
+ctrl-c -> cut entire line
+ALT-D -> CUT THE REMAINDER OF THE WORD
+ALT-DEL -> CUT FROM CURSOR TO THE BEGINING OF THE WORD
+CTRL-Y -> PASTE PREVIOUS CUT TEST
+ALT-Y -> PASTE FROM SET OF PREVIOUSLY CUT TEXT
+CTRL-Y -> PASTE PREVIOUS CUT TEXT
+CTRL-V -> INSERT QUOTED TEXT,USED FOR INSERTING CONTROL OR META KEYS AS TEXT,SUCH AS CTRL-B FOR BACK SPACE OR CTRL-T FOR TABS
+ALT-T -> TRANSPOSE CURRENT AND PREVIOUS WORD
+ALT-L -> LOWER CASE CURRENT WORD
+ALT-U -> UPPER CASE CURRENT WORD
+ALT-C -> Capitalize the current word
+ctrl-c -> TO stop/terminate the current running command
+ctrl-shift-_ -> undo previous change
+
+USERNAMES STARTS WITH TILDE(~) AND HOSTNAME VARIABLES WITH @ AND CAN WE FIND IN /ETC/HOSTS
+  
+  COMMAND LINE TEXT COMPLETION COMMANDS:
+=====================================================================
+TAB -> AUTOMATIC COMPLETION  ==== LIKE IF FILE NAME IS PURNA THEN USE LS PU<TAB> IT WILL GIVE LS PURNS as complete file name
+TAB TAB OR ESC -> LIST POSSIBLE COMPLETIONS
+ALT-/,CTRL-R-/  -> FILE NAME COMLETION,NORMAL TEXT FOR AUTOMATIC
+ALT-$,CTRL-R-$ -> SHELL VARIABLE COMPLETION,$ FOR AUTOMATIC
+ALT-~,CTRL-R~ -> USER NAME COMPLETION,~ FOR AUTOMATIC
+ALT-@,CTRL-R-@ -> HOST NAME COMPLETION,@ FOR AUTOMATIC
+ALT-!,CTRL-R-! -> COMMAND NAME COMPLETION,NORMAL TEXT FOR AUTOMATIC
+PRESS "UP ARROW KEY" TO LIST THE HISTORY OF ALL THE COMMANS USED AND "DOWN ARROW KEY" TO SELECT THE COMAND FROM THE TOP DONW LIST GOT FROM UP ARROW KEY KEY LIST.
+TYPE -> HISTORY COMMAND AS $ history TO WILL GIVE ALL THE LAST 500 COMMANDS USED ON THE CURRENT SESSION.
+
+`date` -> command quote and this is not a single quote which shall treat that as special char and execute when script run and assign a value to it
+
+grep command:
+
+line number: 
+  cat -n <file name> | head  -> it will display first 10 lines n a file
+  cat -n <file name> | tail ->  it will display last 10 lines n a file 
+  cat -n <file name>| head -n 50 | tail -11   
+row numbers : we can get it with grep command
+head /etc/passwd ><file1 name>  -> first 10 lines will be copy to file1.
+
+grep <word to search> <file name>
+grep root /etc/passwd  -> it will search the word root in /etc/passwd file and give the rows
+grep root /etc/passwd /etc/passwd1
+grep -e <word1> -e <word2> /etc/passwd  -> 1st -e for word1 and 2nd -e is for word2 to search in a file /etc/passwd1
+type grep  -> grep is aliased to a color options
+bin/grep -e <root> -e <adm>  <passwd(file)> --color=auto
+grep -E 'root|adm' <file name> -> here root is (word1)|adm is <word2)  -> capital E is called as extended grep : max 255 words we can search manually
+grep -f <file name1 <file name2) -> here we will be storing all words to search in a file file name1 and all these words can search in file name2
+
+grep <word to search> <file name> -h  -> this command will give only output
+grep <word to search> <file name> -l  -> this command will give only lift of files
+grep <word to search> <file name> -c -> it will give the number of files i.e grep <word to search> <file name> |wc -l
+grep <word to search> <file name> -i  -> it will disable the case sensitivity and get all the rows with word 1 irresptive of upper/lower case
+grep <root(word to search)> <file name> - w -> it will display the file or rows having the word only abc and case sensitive
+grep <root(word to search)> <file name> -w -i -> it will display the file or rows start with abc/ABC by disable the case sensitive
+ 
+grep <root(word to search)> <file name> -x -> it will display the rows that is having only abc and does not have any any other abcs then it will display
+ 
+grep <root(word to search)> <file name> -a 1 -> display the next row after the grep search word  
+grep <root(word to search)> <file name> -b 1 -> display the row before the after the grep search word 
+ 
+wc -l /tmp/passwd -> it will give the result the number of words in  file
+wc /tmp/passwd -> it will give the number of lines and number of words and total number of characters of the file
+grep ^root <file name> -> it will display the rows start with start with word root in file name
+every file and every row start with a ^ and every line ends with $
+grep <root> <file name> -v -> does not have file with root
+
+grep <root> <file name> -v '^$' -> it will remove the empty lines 
+grep -q "<text>" /directory - it will check the word text in /directory and it won't list the result. Q means quite mode
+
+
+sort a file >
+--------------
+cat filename |sort -n 
+cat filename |sort -n -r
+cat file name |sort -n |uniq -> it will give the file with sorted and remove all duplicate records
+cat file name |sort -n |uniq -d -> only duplicate in a file
+
+cp file.txt /etc1 ~/. -> copy to home directory
+
+
+column filters:
+cut command is used to filter the columns delimeters with default tab 
+eco -e "/a/tb/tc/td/tc\td/n1\n2\n3\n4"
+a b c d
+1 2 3 4
+
+eco -e "/a/tb/tc/td/tc/n1\n2\n3" |cut -f1 -> it will answer as a1 
+eco -e "/a/tb/tc/td/tc/n1\n2\n3" |cut -f1,4 -> it will extract a 1,d 4
+eco -e "/a/tb/tc/td/tc/n1\n2\n3" |cut -f1-2 -> it will extract a 1,b 2
+
+eco -e "/a/tb/tc/td/tc/n1\n2\n3" |cut -f1-2 -d : -> it will extract a 1,b 2 and here the column seperated with :(clon)
+
+eco -e "/a/tb/tc/td/tc/n1\n2\n3" |cut -c 1,5 : -> 
+eco -e "/a/tb/tc/td/tc/n1\n2\n3" |cut -c 1-5 : -> 
+
+XARGS: it convert columns to rows to default
+ echo -e "1/n2/n3/n4" | xargs -> 1 2 3 4  and to convert to this to columns using below
+ echo -e "1/n2/n3/n4" | xargs |xargs -n1 -> 
+ 1
+ 2
+ 3
+ 4
+ 
+-> free -m |grep mem |xargs |cut  -d ' ' -f4  -> this is used to convert the rows to columsn vice  versa and
+ 
+
+
+  
+I AM AT 77 PAGE:
+
+https://attendee.gotowebinar.com/rt/2808995353017568345
+
+Complete Git and GitHub Tutorial
+DevOps Bootcamp
+
+git stash 
+git stash pop
+git add
+git commit
+git reset <commit id>
+git add . or /git add <file name>  ot git add --all -> to ytrack the files you created/modified in your local to git staging area
+git remote add origin <url>
+git branch <branch name>
+git checkout <branch name> -> it will move the pointer to that branch instead of main branch
+git log -> shows the status of that branch or head
+ls -ltra -> long listing,time, recusrive, hidden
+
+https://github.com/pmannava22/vtgitrepo.git
+in ubuntu machine first we need to use 
+1.sudo apt-get update
+2.sudo apt-get install git
+3.git --version
+3.git init is to initialize the git 
+4.git remote add origin <copy the repository url from the github) -> this is to push the local files from your machine to a remote respository
+5.git remote -version
+6.git push origin master 
+7.git status
+8.git log
+9.git branch 
+10.git clone -b <branch name> <github branch url>   -> to clone the specific branch 
+11.git branch <branch name> -> create a new branch 
+12.git checkout <branch name>  -> to move the cursor to particular branch
+13.history | tail -50
+14.git config --global credential.helper 'cache --timeout-500'  ->  500 seconds our credentials are stored and it won't ask again and again to re enter the credentiasl when we push or pull to central repository.
+15. git merge <brnach name> -> we need to merge the files in branch to master we will use the git merge branch name
+16.git push origin master -> after merge the branch chnages to master and then we need to push the master file to github so that other programmers will see the changes done int hat branch.
+17. git brach -D <branch name>   -> to delete the branch
+18. git log --graph --pretty=oneline  -> here the log do't show the date and author details and are skipped
+19. git revert <commit id> -> we are going to delete the changes we pushed to production for that commit id
+20. https works with port is 443:  
+ssh port is 22 _> use ssh -keygen command to generate the public and private keys under the git directory with .ssh folder and publick key we can copy and use in hithub
+21.git clone <github url to clone the code from repo> 
+22.ssh-keygen -t rsa  or ssh-keygen -o
+23.git pull origin <branch name>
+24.git branch -d origin feature1  -> in linux in git
+25.git push -d origin feature1 -> to delete the feature1 branch from git hub
+26.git log --all --oneline --decorate --graph 
+27.git diff  < file name> ->  compare an unstaged file with the last committed version:-> it will compare the files in staged repository to the files in working directory
+28.git diff --staged -> it will compare the files in local repository(after commit) to the staged repository
+29.git diff HEAD -> compare working directory with local repository 
+30.git diff -r HEAD <file name>  -> compare staged file with the last committed version
+31.git diff -e HEAD  -> compare all staged files with the last committed versions
+https://kinsta.com/blog/linux-commands/#linux-commands-cheat-sheet 
+
+git diff HEAD head~1 -> IT WILL COMPARE THE LATEST COMMIT TO THE JUST PREVIOUS COMMINT
+GIT DIFF HEAD HEAD~2 -> IT WILL COMPARE THE LATEST COMMIT TO THE JUST PREVIOUS -2 COMMINT
+GIT DIFF head~2 head~4  -> it will compare the 3rd commit to prior to the 5th commit to prior to current one
+git show (git shaw code)-> it will provide what are the contents we have pushed to github using that commit id
+git show head-1
+git show head-2
+git annotate <file name> -> it will give who are all updated/pushed that particular file to remore repo
+in github tool we can select the commit id and then open a individual file and then use the blame option to see who and when those chnages to the file._> git annoted
+
+
+chmod +x script -> You use this to make scripts executable, allowing you to run them directly by using the ./ notation.
+
+Debian-based (Ubuntu, Linux Mint) - >sudo apt install gimp
+Red Hat-based (Fedora, CentOS) -> sudo yum install gimp
+Arch-based (Manjaro, Arco Linux) -> sudo pacman -S gimp
+alias ls="ls --color=auto"
+touch -m old_file  -> To change its modification date to the current time, we need to use the -m flag:
+tail -n 4 <file name> -> to view last 4 lines in a file
+head -n 4 <file name> -> to view first 4 lines in a file
+find ./ -name "<file name>"  -> to search a file in current direcory 
+find ./ -type f -name "*.py"  ./home ./work ./temp1 -> these directories
+
+grep "string name" <file name> -> it will search the "string name"  in file 
+grep -c "string name" <file name>  _> it will count the occurences of string name in file
+
+wc <file name> -> it will gives the number of lines in a file followed by number of words and then size of the file followed by file nam
+to dispaly only words in a file to display -> wc -w <file name> -> 100 file1 _> file 1 is having 100 words
+git remote -v ->
+git push origin <brnach name> new changes in that branch to push to git repo
+git merge master
+git merge <branch name> -> it will merge the files in branch to master
+git mergetool 
+cp -rf old-directory new-directpry
+git reset --hard: if i want to remove the file from my staging area then i use this command    
+git fetch and then to see the latest chnages and we need to again run git merge origin master(branch/master branch). where as git pull is works as git fetch + git merge
+forking
+git rebase
+
+HTTPs: by using the https we can clone the repo to local machine using the password authentication
+SSH key:  We need to generate the ssh key and copy the public key from /root/.ssh/id_rsa.pub to the github account to make a secure connection
+steps to follow to use the ssh to clone the rpo
+   1.go to root or user directory /root and give ssh-keygen command to genearte the public key and private rsa key pair 
+   2. after hitting enter key go to these paths: /root/.ssh/id_rsa (private key) and /root/.ssh/id_rsa.pub (public key)
+   3. go to /root/.ssh folder and run the ssh agent in background using the command:eval $(ssh-agent -s) for Windows it is eval "$(ssh-agent -s)" and it will start the agets and provide the ssion pid: Agent pid 3228  
+   4. add your ssh rsa_id private key to the ssh agent ssh-add ~/.ssh/id_rsa 
+   3. use the public key /root/.ssh/id_rsa.pub  and copy the contents of public key to my github account: user setting and then select ssh and GPG keys and then select NEW SSH KEY.
+      After selecting the NEW SSH Key it will open the text box and there we will copy the key to establish a secure connection.
+
+we can export the path using the comamnd: 
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin‌​:/opt/X11/bin
+	  
+
+
+ 
+
+ 
+ 
+ 
+
+
+       
